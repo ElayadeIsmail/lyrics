@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Lyrics</title>
+  </head>
+  <body>
+    <header>
+      <h1>Get Lost In Music.</h1>
+    </header>
+
+    <nav id="main">
+      <ul>
+        <li class="logo"><a href="index.html">Lyrics.</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="top-songs.html">Top Songs</a></li>
+        <li><a href="recnent-add.html">Recently ADD</a></li>
+        <li><a href="#">Contact US</a></li>
+        <li class="form">
+          <input type="text" id="search" placeholder="Search ..." /><button
+            id="submit"
+          >
+            Search
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-wrap">
+      <div class="resent-songs"></div>
+      <div class="lyrics-show"></div>
+    </div>
+    <footer>Made By ELayade All &copy; Reserved 2020</footer>
+    <script>
+      const nav = document.querySelector("#main");
+      let topOfNav = nav.offsetTop;
+
+      function fixNav() {
+        if (window.scrollY >= topOfNav) {
+          document.body.style.paddingTop = nav.offsetHeight + "px";
+          document.body.classList.add("fixed-nav");
+        } else {
+          document.body.classList.remove("fixed-nav");
+          document.body.style.paddingTop = 0;
+        }
+      }
+
+      window.addEventListener("scroll", fixNav);
+    </script>
+    <script src="js/resnt.js"></script>
+  </body>
+</html>
